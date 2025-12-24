@@ -57,7 +57,7 @@ const ContactSection = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="max-w-xl mx-auto">
           {/* Contact Info */}
           <div className="space-y-8">
             <div className="glass-card p-8">
@@ -104,89 +104,6 @@ const ContactSection = () => {
                 ))}
               </div>
             </div>
-          </div>
-
-          {/* Contact Form */}
-          <div className="glass-card p-8">
-            <h3 className="font-display font-semibold text-xl mb-6">Send a Message</h3>
-            <form
-              className="space-y-6"
-              onSubmit={(e) => {
-                e.preventDefault();
-                const formData = new FormData(e.currentTarget);
-                const subject = encodeURIComponent('Portfolio Contact');
-                const body = encodeURIComponent(
-                  `Name: ${formData.get('name')}\nEmail: ${formData.get('email')}\n\nMessage:\n${formData.get('message')}`
-                );
-                window.location.href = `mailto:aryoadiputro@gmail.com?subject=${subject}&body=${body}`;
-              }}
-            >
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-2">
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
-                    placeholder="Your name"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-2">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
-                    placeholder="your@email.com"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label htmlFor="subject" className="block text-sm font-medium mb-2">
-                  Subject
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  required
-                  className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
-                  placeholder="Project inquiry"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-2">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={5}
-                  required
-                  className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none"
-                  placeholder="Tell me about your project..."
-                />
-              </div>
-
-              <Button
-                type="submit"
-                size="lg"
-                className="w-full gradient-bg text-primary-foreground hover:opacity-90 transition-opacity rounded-xl"
-              >
-                <Send className="w-5 h-5 mr-2" />
-                Send Message
-              </Button>
-            </form>
           </div>
         </div>
       </div>
