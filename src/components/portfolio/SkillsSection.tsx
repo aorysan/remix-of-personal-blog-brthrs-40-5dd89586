@@ -59,27 +59,6 @@ const SkillsSection = () => {
           ))}
         </div>
 
-        {/* Skill visualization */}
-        <div className="mt-16 grid md:grid-cols-3 gap-6">
-          {[
-            { skill: 'Frontend Development', level: 90 },
-            { skill: 'Backend Development', level: 85 },
-            { skill: 'Problem Solving', level: 95 },
-          ].map((item) => (
-            <div key={item.skill} className="glass-card p-6">
-              <div className="flex justify-between items-center mb-3">
-                <span className="font-medium">{item.skill}</span>
-                <span className="text-primary font-semibold">{item.level}%</span>
-              </div>
-              <div className="h-2 bg-secondary rounded-full overflow-hidden">
-                <div
-                  className="h-full gradient-bg rounded-full transition-all duration-1000"
-                  style={{ width: `${item.level}%` }}
-                />
-              </div>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );
