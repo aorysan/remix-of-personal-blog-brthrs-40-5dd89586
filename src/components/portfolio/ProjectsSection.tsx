@@ -1,54 +1,15 @@
-import { ExternalLink, Github, Folder } from 'lucide-react';
+import { Github, Folder } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const ProjectsSection = () => {
   const projects = [
     {
-      title: 'Portfolio Website',
-      description: 'A modern, responsive portfolio website built with React and Tailwind CSS featuring smooth animations and dark mode support.',
-      tags: ['React', 'TypeScript', 'Tailwind CSS'],
-      github: 'https://github.com/aorysan',
-      featured: true,
-    },
-    {
-      title: 'E-Commerce Platform',
-      description: 'Full-stack e-commerce solution with product management, shopping cart, and secure payment integration.',
-      tags: ['Node.js', 'React', 'MongoDB'],
-      github: 'https://github.com/aorysan',
-      featured: true,
-    },
-    {
-      title: 'Task Management App',
-      description: 'A collaborative task management application with real-time updates and team collaboration features.',
-      tags: ['Vue.js', 'Firebase', 'Tailwind'],
-      github: 'https://github.com/aorysan',
-      featured: true,
-    },
-    {
-      title: 'Weather Dashboard',
-      description: 'Real-time weather dashboard with location detection and 7-day forecast visualization.',
-      tags: ['JavaScript', 'API', 'CSS'],
-      github: 'https://github.com/aorysan',
-      featured: false,
-    },
-    {
-      title: 'Blog CMS',
-      description: 'Content management system for blogs with markdown support and SEO optimization.',
-      tags: ['Laravel', 'MySQL', 'Vue.js'],
-      github: 'https://github.com/aorysan',
-      featured: false,
-    },
-    {
-      title: 'Chat Application',
-      description: 'Real-time chat application with private messaging and group chat functionality.',
-      tags: ['Socket.io', 'Node.js', 'React'],
-      github: 'https://github.com/aorysan',
-      featured: false,
+      title: 'POS-System',
+      description: 'A Point of Sale system designed for efficient transaction management and inventory tracking.',
+      tags: ['Laravel', 'MySQL', 'PHP'],
+      github: 'https://github.com/aorysan/POS-System',
     },
   ];
-
-  const featuredProjects = projects.filter((p) => p.featured);
-  const otherProjects = projects.filter((p) => !p.featured);
 
   return (
     <section id="projects" className="section-padding bg-card">
@@ -62,13 +23,13 @@ const ProjectsSection = () => {
             <span className="gradient-text">built</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            Here are some of my recent projects. Each one taught me something new and helped me grow as a developer.
+            Here are some of my projects. Each one taught me something new and helped me grow as a developer.
           </p>
         </div>
 
-        {/* Featured Projects */}
+        {/* Projects */}
         <div className="grid lg:grid-cols-3 gap-6 mb-12">
-          {featuredProjects.map((project, index) => (
+          {projects.map((project) => (
             <div
               key={project.title}
               className="group relative bg-background rounded-2xl border border-border overflow-hidden card-hover"
@@ -110,44 +71,6 @@ const ProjectsSection = () => {
                     </span>
                   ))}
                 </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Other Projects */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {otherProjects.map((project) => (
-            <div
-              key={project.title}
-              className="group p-6 bg-background rounded-xl border border-border hover:border-primary/50 transition-all duration-300"
-            >
-              <div className="flex items-start justify-between mb-4">
-                <Folder className="w-10 h-10 text-primary" />
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  <Github className="w-5 h-5" />
-                </a>
-              </div>
-
-              <h3 className="font-display font-semibold text-lg mb-2 group-hover:text-primary transition-colors">
-                {project.title}
-              </h3>
-
-              <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
-                {project.description}
-              </p>
-
-              <div className="flex flex-wrap gap-2">
-                {project.tags.map((tag) => (
-                  <span key={tag} className="text-xs text-muted-foreground font-mono">
-                    {tag}
-                  </span>
-                ))}
               </div>
             </div>
           ))}
