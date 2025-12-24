@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import BlogCard from '@/components/BlogCard';
 import SocialShare from '@/components/SocialShare';
-import ReadingProgress from '@/components/ReadingProgress';
+
 import TableOfContents from '@/components/TableOfContents';
 import RelatedPosts from '@/components/RelatedPosts';
 import BackToTop from '@/components/BackToTop';
@@ -313,7 +313,7 @@ const BlogDetail = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <ReadingProgress />
+      
       <Header />
       
       <main id="main-content" className="container-blog py-8">
